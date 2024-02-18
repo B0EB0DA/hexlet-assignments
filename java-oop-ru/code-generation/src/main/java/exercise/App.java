@@ -9,9 +9,11 @@ import java.nio.file.StandardOpenOption;
 
 // BEGIN
 class App {
+    @SneakyThrows
     public static void save(Path path, Car car)  throws IOException {
-        Files.writeString(path, car.serialize());
+        Files.writeString(path, car.serialize(), StandardOpenOption.CREATE);
     }
+    @SneakyThrows
     public static Car extract(Path path) throws IOException {
         return Car.unserialize(Files.readString(path));
     }
