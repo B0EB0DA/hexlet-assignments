@@ -28,11 +28,6 @@ class Car {
     @SneakyThrows
     public static Car unserialize(String carJSONString) {
         return new ObjectMapper().readValue(carJSONString, Car.class);
-//        try {
-//            return new ObjectMapper().readValue(carJSONString, Car.class);
-//        } catch (Exception e) {
-//            return null;
-//        }
     }
     // END
 }

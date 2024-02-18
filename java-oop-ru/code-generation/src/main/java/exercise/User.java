@@ -1,5 +1,6 @@
 package exercise;
 
+import lombok.AllArgsConstructor;
 import lombok.Value;
 
 // BEGIN
