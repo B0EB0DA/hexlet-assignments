@@ -1,6 +1,5 @@
 package exercise;
 
-import lombok.SneakyThrows;
 import lombok.Value;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,18 +14,10 @@ class Car {
     User owner;
 
     // BEGIN
-    @SneakyThrows
-    public String serialize() {
-        return new ObjectMapper().writeValueAsString(this);
-        //final ObjectMapper mapper = new ObjectMapper();
-//        try {
-//            return new ObjectMapper().writeValueAsString(this);
-//        } catch (Exception e) {
-//            return "";
-//        }
+    public String serialize() throws Exception{
+        return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
     }
-    @SneakyThrows
-    public static Car unserialize(String carJSONString) {
+    public static Car unserialize(String carJSONString) throws Exception{
         return new ObjectMapper().readValue(carJSONString, Car.class);
     }
     // END
