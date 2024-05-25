@@ -31,7 +31,7 @@ public final class App {
                 }
             }
             if (ret == null) {
-                throw new NotFoundResponse("Entity with id = " + id + " not found");
+                throw new NotFoundResponse("Company not found");
             } else {
                 ctx.json(ret);
             }
