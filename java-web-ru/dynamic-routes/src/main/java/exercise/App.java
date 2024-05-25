@@ -30,10 +30,9 @@ public final class App {
                     break;
                 }
             }
-            if ( ret == null) {
+            if (ret == null) {
                 throw new NotFoundResponse("Entity with id = " + id + " not found");
-            }
-            else {
+            } else {
                 ctx.json(ret);
             }
         });
