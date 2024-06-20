@@ -29,8 +29,7 @@ public class PostsController {
     @GetMapping("/api/users/{id}/posts")
     public List<Post> show(@PathVariable String id) {
         var page = posts.stream()
-                .filter(p -> p.getUserId() == Integer.valueOf(id))
-                .toList();
+                .filter(p -> p.getUserId() == Integer.valueOf(id)).toList();
         return page;
     }
 
